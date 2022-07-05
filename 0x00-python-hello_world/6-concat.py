@@ -1,5 +1,5 @@
-#!/bin/bash/python3
+#!/usr/bin/python3
 str1 = "Holberton"
 str2 = "School"
-strConc = str1 + " " + str2
-print(f"Welcome to {strConc}!")
+str1 = str1 + " " + str2
+print(f"Welcome to {str1}!")

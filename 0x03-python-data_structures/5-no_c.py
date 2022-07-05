@@ -1,9 +1,10 @@
-#!/usr/bin/bash/python3
-
+#!/usr/bin/python3
 
 def no_c(my_string):
-    new_str = ""
-    for i in my_string:
-        if i != "c" and i != "C":
-            new_str += i
-    return new_str
+    chars = len(my_string)
+    buf = ""
+    for i in range(0, chars):
+        if my_string[i] == "c" or my_string[i] == "C":
+            continue
+        buf = buf + my_string[i]
+    return buf

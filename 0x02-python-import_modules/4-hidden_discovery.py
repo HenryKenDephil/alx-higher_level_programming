@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+
+import hidden_4
+
 if __name__ == "__main__":
-    import hidden_4
-    modules = dir(hidden_4)
-    for elem in modules:
-        if elem[0] != '_':
-            print(elem)
+    for content in dir(hidden_4):
+        if content[:2] != "__":
+            print("{:s}".format(content))

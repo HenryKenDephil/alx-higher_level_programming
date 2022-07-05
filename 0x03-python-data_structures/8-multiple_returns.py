@@ -1,8 +1,11 @@
-#!/usr/bin/bash/python3
-def multiple_returns(sentence):
-    len_sen = len(sentence)
+#!/usr/bin/python3
 
-    if (len_sen == 0):
-        if sentence == " ":
-            return 0, None
-        return len(sentence), sentence[0]
+def multiple_returns(sentence):
+    length = len(sentence)
+    if length == 0:
+        first_char = None
+    else:
+        first_char = sentence[0]
+
+    new_tuple = (length, first_char)
+    return new_tuple
