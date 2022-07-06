@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	listint_t *temp = *head;
 	int head_val, tail_val;
 
-	/* empty linked list condition */
+	/*setting an  empty linked list condition */
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
