@@ -1,13 +1,11 @@
-#!/usr/bin/bash/python3
-'''Write a function that prints a string in
-uppercase followed by a new line'''
+#!/usr/bin/python3
 
 
 def uppercase(str):
-    for i in range(len(str)):
-        if ord(str[i]) >= 97 and ord(str[i]) <= 122:
-            num = 32
+    result = ''
+    for char in str:
+        if ord(char) >= 97 and ord(char) <= 122:
+            result += chr(ord(char) - 32)
         else:
-            num = 0
-            print("{:c}" .format(ord(str[i]) - num), end='')
-    print()
+            result += char
+    print("{:s}".format(result))

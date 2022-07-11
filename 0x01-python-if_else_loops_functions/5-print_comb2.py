@@ -1,8 +1,7 @@
-#!/usr/bin/bash/python3
-'''Write a program that
-prints numbers from 0 to 99'''
+#!/usr/bin/python3
+
 for num in range(0, 100):
-    if num != 99:
-        print("{:02d}, " .format(num), end='')
+    if num == 99:
+        print("{0:02d}".format(num))
     else:
-        print("{:02d}".format(num))
+        print("{0:02d},".format(num), end=" ")
