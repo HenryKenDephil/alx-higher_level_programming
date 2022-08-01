@@ -1,13 +1,10 @@
 #!/usr/bin/python3
+"""intro to inheritance"""
+
+
 def lookup(obj):
-    """ Function that returns the list of available attributes
-        and methods of an object
-
-    Args:
-        obj: instance of the class
-
-    Returns:
-        List of attributes
     """
-
+    uses the inbuilt dir() method to return
+    list of attributes and methods of an object
+    """
     return dir(obj)

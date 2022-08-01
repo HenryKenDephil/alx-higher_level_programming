@@ -1,14 +1,12 @@
 #!/usr/bin/python3
+"""first go at inheritance"""
+
+
 class MyList(list):
-    """ Class that inherits the attributes references of class list
-
-    Args:
-        list: class list
-
-    """
+    """access methods of list class"""
+    def __init__(self):
+        super().__init__()
 
     def print_sorted(self):
-        """ Method that prints the sorted list """
-        l_sorted = self.copy()
-        l_sorted.sort()
-        print(l_sorted)
+        """prints sorted list"""
+        print(sorted(self))
