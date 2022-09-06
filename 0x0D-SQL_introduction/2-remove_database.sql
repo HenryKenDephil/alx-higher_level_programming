@@ -1,0 +1,2 @@
+DROP IF TABLE EXISTS hbtn_0c_0;
+
