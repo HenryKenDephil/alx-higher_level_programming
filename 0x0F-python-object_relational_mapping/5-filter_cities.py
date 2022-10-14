@@ -1,24 +1,26 @@
 #!/usr/bin/python3
-'''script that takes the name of the state\
-     as an argument and lists all cities of the state'''
+"""script that takes in the name of a state as an argument and lists
+    all cities of that state, using the database hbtn_0e_4_usa
+"""
+if __name__ == "__main__":
+    import sys
+    import MySQLdb
 
-from xmlrpc.client import _HostType
-import MySQLdb
-import sys
+    serv = MySQLdb.connect(host="localhost",  port=3306,
+                           user=sys.argv[1], password=sys.argv[2],
+                           database=sys.argv[3])
 
-conn = MySQLdb.connector.connect(
-    host = "localhost",
-    port = "3306",
-    User = sys.argv[1],
-    passwd=sys.argv[2],
-    db = sys.argv[3]
-)
-cur = conn.cursor()
-cur.execute("SELECT * FROM states WHERE cities = '%s' ORDER BY\
-    cities.id ASC {}".format(sys.argv[4])) 
-cities = cur.fetchall()
-for city in cities:
-    print(city)
-
-conn.close()
-cur.close()
+    newList = []
+    c = serv.cursor()
+    stateName = sys.argv[4]
+    c.execute("SELECT c.id, c.name, s.name\
+                    FROM cities AS c\
+                    JOIN states AS s \
+                    ON c.state_id=s.id ORDER BY s.id;")
+    rows = c.fetchall()
+    for row in rows:
+        if row[2] == stateName:
+            newList.append(row[1])
+    print(', '.join(newList))
+    c.close()
+    serv.close()
