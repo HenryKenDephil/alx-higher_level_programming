@@ -2,7 +2,6 @@
 
 import sys 
 from sys import argv
-import mysql.connector
 import MySQLdb 
 
 '''script that lists states with 'N' at
@@ -17,6 +16,6 @@ if __name__ == '__main__':
         db=sys.argv[3]
     )
     my_cursor = db.cursor()   
-    my_cursor.execute("SELECT * FROM 'states' ORDER BY states.id")
+    my_cursor.execute("SELECT * FROM states ORDER BY states.id")
     [print(states) for states in my_cursor.fetchall() if states[1][0]="N"]
     

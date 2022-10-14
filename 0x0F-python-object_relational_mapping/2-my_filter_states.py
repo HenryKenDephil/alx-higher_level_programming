@@ -5,7 +5,6 @@ whose name matches that supplied as argument.
 """
 from sys import argv
 import MySQLdb
-import mysql.connector
 import sys
 
 if __name__ == "__main__":
