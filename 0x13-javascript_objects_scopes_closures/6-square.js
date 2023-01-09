@@ -11,4 +11,3 @@ module.exports = class Square extends parentSquare {
     for (let row = 0; row < this.height; row++) console.log(c.repeat(this.width));
   }
 };
-Footer

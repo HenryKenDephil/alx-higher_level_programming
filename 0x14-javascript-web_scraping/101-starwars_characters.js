@@ -1,11 +1,9 @@
 #!/usr/bin/node
 const request = require('request');
-const endpoint = process .argv[2] + 'https://swapi-api.hbtn.io/api/films/';
+const endpoint = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 
 request(endpoint, (err, res, body) => {
-  if (err) {
-    console.error(err);
-  }
+  if (err) throw err;
   const characters = JSON.parse(body).characters;
   printChars(characters, 0);
 });

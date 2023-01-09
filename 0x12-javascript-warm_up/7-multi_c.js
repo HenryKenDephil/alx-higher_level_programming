@@ -1,10 +1,7 @@
 #!/usr/bin/node
-let i = parseInt(process.argv[2]);
-if (Number.isNaN(i)) {
-  console.log('Missing number of occurrences');
+if (!parseInt(process.argv[2])) {
+  console.log('Missing number of occurences');
 } else {
-  while (i > 0) {
-    console.log('C is fun');
-    i--;
-  }
+  let count = Math.round(process.argv[2]);
+  while (count > 0) { console.log('C is fun'); count--; }
 }

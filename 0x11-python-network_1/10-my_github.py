@@ -1,15 +1,10 @@
 #!/usr/bin/python3
-"""
-Python script that takes GitHub credentials
-and uses the GitHub API to display the user id
-"""
-from requests import get, auth
-import sys
+""" Github authentication script """
+from sys import argv
+from requests import get
+from requests.auth import HTTPBasicAuth
 
-
-if __name__ == "__main__":
-    url = 'https://api.github.com/user'
-    user = sys.argv[1]
-    password = sys.argv[2]
-    r = get(url, auth=auth.HTTPBasicAuth(user, password))
-    print(r.json().get('id'))
+if __name__ == '__main__':
+    auth = HTTPBasicAuth(argv[1], argv[2])
+    res = get("https://api.github.com/user", auth=auth)
+    print(res.json().get('id'))
